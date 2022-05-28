@@ -56,7 +56,7 @@
         columns: [
             {data: 'DT_RowIndex', name: 'DT_RowIndex'},
             {data: 'name', name: 'name'},
-            {data: 'nom_rek', name: 'nom_rek'},
+            {data: 'no_rek', name: 'no_rek'},
             {data: 'dob', name: 'dob'},
             {
                 data: 'action', 
