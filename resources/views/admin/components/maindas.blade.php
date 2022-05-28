@@ -198,8 +198,8 @@
                 class="h-10 w-10 bg-gray-200 border rounded-full"
               />
               <span class="flex flex-col ml-2">
-                <span class="truncate w-20 font-semibold tracking-wide leading-none">Taufiq</span>
-                <span class="truncate w-20 text-gray-500 text-xs leading-none mt-1">Administrator</span>
+                <span class="truncate w-20 font-semibold tracking-wide leading-none">{{ Auth()->user()->name }}</span>
+                <span class="truncate w-20 text-gray-500 text-xs leading-none mt-1">{{ Auth()->user()->level }}</span>
               </span>
             </a>
           </div>

@@ -48,7 +48,7 @@ class DashboardController extends Controller
     }
 
     public function money(){
-        return view('admin.money');
+        return view("admin.money.money");
     }
 
     public function getMoneys(Request $request)
@@ -58,7 +58,7 @@ class DashboardController extends Controller
             return DataTables::of($data)
                 ->addIndexColumn()
                 ->addColumn('action', function($row){
-                    $actionBtn = '<a href="/money/debitkredit/'.$row->id.'" class="buttonedit px-2 py-1 rounded-md text-white">Debit/Kredit</a> <a href="/money/riwayat/'.$row->id.'" class="buttondelete px-2 py-1 rounded-md text-white">Riwayat</a>';
+                    $actionBtn = '<a href="/admin/money/debitkredit/'.$row->id.'" class="buttonedit px-2 py-1 rounded-md text-white">Debit/Kredit</a> <a href="/admin/money/riwayat/'.$row->id.'" class="buttondelete px-2 py-1 rounded-md text-white">Riwayat</a>';
                     return $actionBtn;
                 })
                 ->rawColumns(['action'])

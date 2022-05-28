@@ -1,7 +1,10 @@
 @extends('admin.components.maindas')
 @section('dascontainer')
 <div class="main-content flex flex-col flex-grow p-4">
-    <h1 class="font-bold text-2xl text-gray-700">Data Nasabah</h1>
+    <div class="flex justify-between">
+        <h1 class="font-bold text-2xl text-gray-700">Data Nasabah</h1>
+        <a href="{{ url("/admin/client/add") }}" class="px-3 py-2 rounded-md bg-blue-500 hover:bg-blue-700 text-white">Create</a>
+    </div>
     @if(session()->has('success'))
     <div class="alert alert-success alert-dismissible fade show" role="alert">
         {{ session('success') }}

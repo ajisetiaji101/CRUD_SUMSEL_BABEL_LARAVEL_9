@@ -29,9 +29,17 @@ Route::get('/admin/account', [DashboardController::class, 'akun'])->middleware('
 
 
 Route::get('/admin/client', [ClientController::class, 'client'])->middleware('auth');
+Route::get('/admin/client/add', [ClientController::class, 'addClient'])->middleware('auth');
+Route::post('/admin/client/add',[ClientController::class, 'add'])->middleware('auth');
 Route::get('/admin/client/edit/{id}',[ClientController::class, 'editclient'])->middleware('auth');
 Route::put('/admin/client/edit/{id}',[ClientController::class, 'update'])->middleware('auth');
 Route::get('/admin/client/delete/{id}',[ClientController::class, 'delete'])->middleware('auth');
+
+Route::get('/admin/money/debitkredit/{id}', [ClientController::class, 'editMoney'])->middleware('auth');
+Route::put('/admin/money/debitkredit/{id}', [ClientController::class, 'updateMoney'])->middleware('auth');
+Route::get('/admin/money/riwayat/{id}', [ClientController::class, 'riwayat'])->middleware('auth');
+Route::get('/admin/money/print', [ClientController::class, 'printMoney'])->middleware('auth');
+
 
 
 Route::get('/admin/clients', [DashboardController::class, 'getClients'])->name('clients.list')->middleware('auth');
