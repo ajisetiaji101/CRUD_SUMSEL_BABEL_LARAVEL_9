@@ -11,8 +11,9 @@
         <div>
             <h1>Wellcome Administrator</h1>
         </div>
+
         <div>
-            <h1>Time : 16 : 30 WIB</h1>
+            <h1>Time : {{ $tanggal }} WIB</h1>
         </div>
     </div>
     <div class="grid grid-cols-2 gap-4 pt-10 h-full">

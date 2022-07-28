@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Client;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\URL;
@@ -13,7 +14,13 @@ class DashboardController extends Controller
 {
     //
     public function index(){
-        return view('admin.home');
+
+        $mytime = Carbon::now()->toTimeString();
+
+
+        return view('admin.home',[
+            "tanggal" => $mytime
+        ]);
     }
 
     public function akun(){
