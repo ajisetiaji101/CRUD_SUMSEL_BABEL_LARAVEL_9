@@ -15,7 +15,7 @@
     </div>
     <div>
         <div class="flex justify-center items-center h-screen bg-blue-500">
-            <form action="{{ url('/login') }}" method="post">
+            <form action="{{ url('/register') }}" method="post">
             <div class="grid grid-cols-1 gap-4 bg-white p-20 rounded-lg shadow-lg">
                 @if(session()->has('success'))
 				<div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -29,8 +29,20 @@
 					<button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
 				  </div>
 				  @endif
-                <span class="text-gray-600 uppercase font-extrabold">Sign In</span>
+                <span class="text-gray-600 uppercase font-extrabold">Register</span>
 					@csrf
+                    <div>
+                        <h1 class="leading-10 text-gray-600">name</h1>
+                        <input id="name" name="name" type="text" class="form-input px-4 rounded-lg border-2" placeholder="Your Name">
+                    </div>
+                    <div>
+                        <h1 class="leading-10 text-gray-600">NIK</h1>
+                        <input id="nik" name="nik" type="text" class="form-input px-4 rounded-lg border-2" placeholder="Your Identity">
+                    </div>
+                    <div>
+                        <h1 class="leading-10 text-gray-600">Address</h1>
+                        <input id="address" name="address" type="text" class="form-input px-4 rounded-lg border-2" placeholder="Your Address">
+                    </div>
                 <div>
                     <h1 class="leading-10 text-gray-600">Email Address</h1>
                     <input id="email" name="email" type="email" class="form-input px-4 rounded-lg border-2" placeholder="Youremail@email.com">
@@ -39,8 +51,8 @@
                     <h1 class="leading-10 text-gray-600">Password</h1>
                     <input id="password" name="password" type="password" class="form-input px-4 rounded-lg border-2" placeholder="******">
                 </div>
-                <button type="submit" class="p-3 bg-blue-500 rounded-lg text-white hover:bg-blue-700">LOGIN</button>
-                <a href={{ url('register') }} class="text-center text-red-400 underline">Buat Akun</a>
+                <button type="submit" class="p-3 bg-blue-500 rounded-lg text-white hover:bg-blue-700">Submit</button>
+                <a href="/login" class="text-red-400 text-center underline">Kembali</a>
             </div>
         </form>
         <div>

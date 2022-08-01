@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\DaftarController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
@@ -19,6 +20,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/register', [DaftarController::class, 'index']);
+Route::post('/register', [DaftarController::class, 'add']);
 
 Route::get('/login', [LoginController::class, 'index']);
 Route::post('/login', [LoginController::class, 'authenticate'])->name('login')->middleware('guest');
@@ -47,3 +51,4 @@ Route::get('/admin/money', [DashboardController::class, 'money'])->middleware('a
 Route::get('/admin/moneys', [DashboardController::class, 'getMoneys'])->name('money.list')->middleware('auth');
 Route::get('/admin/settings', [DashboardController::class, 'settings'])->middleware('auth');
 Route::put('/admin/settings/edit', [DashboardController::class, 'update'])->middleware('auth');
+
